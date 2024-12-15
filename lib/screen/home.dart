@@ -1,170 +1,187 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:rental_mobil/screen/mobil/mobil.dart';
+import 'package:rental_mobil/screen/mobil/keluarga.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomepageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomepageState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.grey[50],
         body: SingleChildScrollView(
           child: Column(
             children: [
               Container(
                 width: double.infinity,
-                height: 250.0,
+                height: 230.0,
                 decoration: BoxDecoration(
-                  color: Colors.lime,
+                  color: Color(0xff2984FA),
                   borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(20),
-                      bottomRight: Radius.circular(20)),
+                      bottomLeft: Radius.circular(100),
+                      bottomRight: Radius.circular(100)),
                 ),
-                child: Image.asset('assets/R.png'),
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Tipe Mobil',
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => ListMobil()),
-                        );
-                      },
-                      child: Icon(
-                        Icons.arrow_forward_sharp,
-                        size: 30,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              // list mobil 1
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 25, vertical: 60),
+                  child: Column(
                     children: [
-                      Container(
-                        width: 250,
-                        height: 200.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          'Hello,',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontWeight: FontWeight.w200),
+                          textAlign: TextAlign.left,
                         ),
-                        child: Image.asset('assets/R.png'),
                       ),
-                      SizedBox(width: 20),
-                      Container(
-                        width: 250,
-                        height: 200.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Image.asset('assets/avanza.png'),
-                      ),
-                      SizedBox(width: 20),
-                      Container(
-                        width: 250,
-                        height: 200,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Image.asset('assets/pajero.png'),
-                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Budiono Siregar',
+                            style: TextStyle(color: Colors.white, fontSize: 35),
+                          ),
+                          Icon(
+                            Icons.account_circle,
+                            size: 40,
+                            color: Colors.white,
+                          )
+                        ],
+                      )
                     ],
                   ),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+              Padding(
+                padding: const EdgeInsets.all(15),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text(
-                      'Tipe Mobil',
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
-                    ),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => ListMobil()),
+                          MaterialPageRoute(
+                              builder: (context) => MobilKeluarga()),
                         );
                       },
-                      child: Icon(
-                        Icons.arrow_forward_sharp,
-                        size: 30,
+                      child: Container(
+                        width: 50,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.3),
+                              offset: Offset(4, 4),
+                              blurRadius: 8,
+                            )
+                          ],
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              'assets/icon/setir.png',
+                            ),
+                          ],
+                        ),
                       ),
-                    )
+                    ),
+
+                    //
+                    Container(
+                      width: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.3),
+                            offset: Offset(4, 4),
+                            blurRadius: 8,
+                          )
+                        ],
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/icon/setir.png',
+                          ),
+                        ],
+                      ),
+                    ),
+                    //
+                    Container(
+                      width: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.3),
+                            offset: Offset(4, 4),
+                            blurRadius: 8,
+                          )
+                        ],
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/icon/setir.png',
+                            width: 70,
+                          ),
+                        ],
+                      ),
+                    ),
+                    //
+                    Container(
+                      width: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.3),
+                            offset: Offset(4, 4),
+                            blurRadius: 8,
+                          )
+                        ],
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/icon/setir.png',
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
-              // list mobil 1
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: 50),
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 250,
-                          height: 200.0,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Image.asset('assets/R.png'),
-                        ),
-                        SizedBox(width: 20),
-                        Container(
-                          width: 250,
-                          height: 200.0,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Image.asset('assets/avanza.png'),
-                        ),
-                        SizedBox(width: 20),
-                        Container(
-                          width: 250,
-                          height: 200,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Image.asset('assets/pajero.png'),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+              Text(
+                'Cari Mobil',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               )
             ],
           ),

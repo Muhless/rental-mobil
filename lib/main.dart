@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:rental_mobil/screen/home.dart';
 import 'package:rental_mobil/screen/login.dart';
+import 'package:rental_mobil/screen/mobil/keluarga.dart';
 import 'package:rental_mobil/screen/profile.dart';
 
 void main() {
@@ -16,6 +17,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+
       home: MainNavigation(), // Menggunakan kerangka navigasi utama
     );
   }
@@ -27,10 +29,15 @@ class MainNavigation extends StatefulWidget {
 }
 
 class _MainNavigationState extends State<MainNavigation> {
-  int _currentIndex = 0;
+  int _currentIndex = 1;
 
   // Daftar halaman yang dapat diakses
-  final List<Widget> _pages = [ProfileScreen(), HomeScreen(), Login()];
+  final List<Widget> _pages = [
+    ProfileScreen(),
+    HomeScreen(),
+    Login(),
+    MobilKeluarga()
+  ];
 
   @override
   Widget build(BuildContext context) {
