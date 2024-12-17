@@ -25,7 +25,7 @@ class _DetailMobilKeluargaState extends State<DetailMobilKeluarga> {
             // ignore: sized_box_for_whitespace
             Container(
               width: double.infinity,
-              color: Colors.lime,
+              color: Color(0xff222831),
               child: Column(
                 children: [
                   Row(

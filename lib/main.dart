@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:rental_mobil/screen/home.dart';
 import 'package:rental_mobil/screen/login.dart';
-import 'package:rental_mobil/screen/mobil/keluarga/keluarga.dart';
+import 'package:rental_mobil/screen/mobil/keluarga/list.dart';
 import 'package:rental_mobil/screen/profile.dart';
 import 'package:rental_mobil/widgets/statusbar.dart';
 

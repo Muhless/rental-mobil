@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:rental_mobil/screen/mobil/keluarga/keluarga.dart';
+import 'package:rental_mobil/screen/mobil/keluarga/list.dart';
 import 'package:rental_mobil/widgets/statusbar.dart';
 
 class HomeScreen extends StatefulWidget {
