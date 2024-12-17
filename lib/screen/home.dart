@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xff222831),
         body: SingleChildScrollView(
           child: Column(
             children: [

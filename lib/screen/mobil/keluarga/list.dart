@@ -69,10 +69,8 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                           ),
                           borderRadius: BorderRadius.all(Radius.circular(10))),
                       child: TextField(
-                        focusNode:
-                            _focusNode, // Menghubungkan focusNode ke TextField
-                        controller:
-                            _controller, // Menghubungkan TextEditingController
+                        focusNode: _focusNode,
+                        controller: _controller,
                         style: TextStyle(color: Colors.white),
                         onChanged: (value) {
                           print('Teks pencarian: $value');
