@@ -48,7 +48,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                       child: Icon(
                         Icons.arrow_back,
                         size: 30,
-                        color: Colors.white,
+                        color: Color(0xfff98c53),
                       ),
                     ),
                   ),
@@ -72,7 +72,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                       child: TextField(
                         focusNode: _focusNode,
                         controller: _controller,
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.black),
                         onChanged: (value) {
                           print('Teks pencarian: $value');
                         },
@@ -82,7 +82,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                           suffixIcon: IconButton(
                             icon: Icon(
                               Icons.search,
-                              color: Colors.white,
+                              color: Color(0xfff98c53),
                             ),
                             onPressed: () {
                               _search(_controller.text);
@@ -104,7 +104,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                       print('Filter button ditekan');
                     },
                     icon: Icon(Icons.filter_list),
-                    color: Colors.white,
+                    color: Color(0xfff98c53),
                   ),
                 ],
               ),
