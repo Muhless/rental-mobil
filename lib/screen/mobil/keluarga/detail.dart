@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:rental_mobil/widgets/warna.dart';
 
 class DetailMobilKeluarga extends StatefulWidget {
   const DetailMobilKeluarga({super.key});
@@ -25,7 +26,7 @@ class _DetailMobilKeluargaState extends State<DetailMobilKeluarga> {
             // ignore: sized_box_for_whitespace
             Container(
               width: double.infinity,
-              color: Color(0xff222831),
+              color: Colors.white,
               child: Column(
                 children: [
                   Row(
@@ -38,7 +39,7 @@ class _DetailMobilKeluargaState extends State<DetailMobilKeluarga> {
                           padding: EdgeInsets.symmetric(
                               horizontal: 20, vertical: 40),
                           child: Icon(Icons.arrow_back,
-                              size: 30, color: Colors.white),
+                              size: 30, color: Warna.primaryColor),
                         ),
                       ),
                     ],

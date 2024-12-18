@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:rental_mobil/screen/mobil/keluarga/detail.dart';
 import 'package:rental_mobil/screen/mobil/keluarga/list.dart';
 import 'package:rental_mobil/widgets/statusbar.dart';
+import 'package:rental_mobil/widgets/warna.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,7 +14,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  double _marginLeft = 20;
+  double _marginLeft = 30;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 });
               } else {
                 setState(() {
-                  _marginLeft = 20; // Kembalikan margin saat scroll kembali
+                  _marginLeft = 30; // Kembalikan margin saat scroll kembali
                 });
               }
             }
@@ -51,10 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         bottomRight: Radius.circular(30)),
                   ),
                   child: Container(
-                    margin: EdgeInsets.only(
-                      top: 40,
-                      left: 20,
-                    ),
+                    margin: EdgeInsets.only(top: 40, left: 30, right: 30),
                     child: Column(
                       children: [
                         Align(
@@ -75,13 +73,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               'Budiono Siregar',
                               style: TextStyle(fontSize: 35),
                             ),
-                            Container(
-                              margin: EdgeInsets.only(right: 20),
-                              child: Icon(
-                                Icons.account_circle,
-                                size: 40,
-                                // color: Colors.white,
-                              ),
+                            Icon(
+                              Icons.account_circle,
+                              size: 40,
+                              // color: Colors.white,
                             )
                           ],
                         )
@@ -90,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(5),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: List.generate(
@@ -112,13 +107,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             );
                           },
                           child: Container(
-                            width: 80,
-                            height: 80,
+                            width: 60,
+                            height: 60,
                             padding: EdgeInsets.all(15),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.all(
-                                Radius.circular(30),
+                                Radius.circular(20),
                               ),
                             ),
                             child: Image.asset(
@@ -135,10 +130,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
+                      padding:
+                          const EdgeInsets.only(left: 30, right: 30, top: 100),
                       child: Text(
-                        'Mobil Populer',
+                        'Type Mobil',
                         style: TextStyle(
                           fontSize: 25,
                         ),
@@ -160,6 +155,32 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: List.generate(
                               3,
                               (index) {
+                                Color itemColor;
+                                String itemText;
+                                final images = [
+                                  'assets/keluarga/brio.png',
+                                  'assets/R.png',
+                                  'assets/pickup/box.png'
+                                ];
+
+                                switch (index) {
+                                  case 0:
+                                    itemColor = Warna.primaryColor;
+                                    itemText = 'Mobil Keluarga';
+                                    break;
+                                  case 1:
+                                    itemColor = Warna.secondaryColor;
+                                    itemText = 'Mobil Sport';
+                                    break;
+                                  case 2:
+                                    itemColor = Warna.thirdColor;
+                                    itemText = 'Mobil Pickup';
+                                    break;
+                                  default:
+                                    itemColor = Warna.primaryColor;
+                                    itemText = 'Mobil Keluarga';
+                                }
+
                                 return GestureDetector(
                                   onTap: () {
                                     Navigator.push(
@@ -171,26 +192,25 @@ class _HomeScreenState extends State<HomeScreen> {
                                   },
                                   child: Container(
                                     margin: EdgeInsets.only(top: 20, right: 20),
-                                    height: 350,
-                                    width: 250,
+                                    height: 290,
+                                    width: 230,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(40)),
-                                        color: Color(0xffF98C53)),
+                                        color: itemColor),
                                     child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                          CrossAxisAlignment.center,
                                       children: [
                                         Container(
                                           margin: EdgeInsets.all(20),
-                                          child: Text(
-                                            'cihuy',
-                                            style: TextStyle(
-                                                fontSize: 25,
-                                                color: Colors.white),
+                                          child: Image.asset(
+                                            images[index],
+                                            fit: BoxFit.cover,
                                           ),
                                         ),
-                                        Image.asset('assets/R.png')
                                       ],
                                     ),
                                   ),

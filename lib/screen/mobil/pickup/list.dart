@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:rental_mobil/screen/mobil/keluarga/detail.dart';
+import 'package:rental_mobil/widgets/warna.dart';
 
 class MobilKeluarga extends StatefulWidget {
   const MobilKeluarga({super.key});
@@ -48,7 +49,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                       child: Icon(
                         Icons.arrow_back,
                         size: 30,
-                        color: Color(0xfff98c53),
+                        color: Warna.primaryColor,
                       ),
                     ),
                   ),
