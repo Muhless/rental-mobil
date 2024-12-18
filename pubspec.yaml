@@ -19,4 +19,5 @@ flutter:
   assets:
     - assets/
     - assets/pickup/
-    - assets/icon/
+    - assets/icons/
+    - assets/keluarga/

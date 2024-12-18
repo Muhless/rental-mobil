@@ -31,7 +31,8 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0xff222831),
+        // backgroundColor: Color(0xff222831),
+        backgroundColor: Color(0xffEEEEEE),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(20),
@@ -125,7 +126,8 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                       width: MediaQuery.of(context).size.width * 0.85,
                       height: MediaQuery.of(context).size.height * 0.25,
                       decoration: BoxDecoration(
-                        color: Color(0xffEEEEEE),
+                        // color: Color(0xffEEEEEE),
+                        color: Color(0xfff98c53),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Padding(
@@ -140,7 +142,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Image.asset(
-                                      'assets/icon/toyota.png',
+                                      'assets/icons/toyota.png',
                                       height: 50,
                                       width: 100,
                                     ),
