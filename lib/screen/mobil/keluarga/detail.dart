@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:rental_mobil/screen/pembayaran.dart';
 import 'package:rental_mobil/widgets/warna.dart';
 
 class DetailMobilKeluarga extends StatefulWidget {
@@ -28,8 +29,8 @@ class _DetailMobilKeluargaState extends State<DetailMobilKeluarga> {
               child: Column(
                 children: [
                   Container(
-                    alignment: Alignment.topLeft,
-                    margin: EdgeInsets.all(20),
+                    alignment: Alignment.bottomLeft,
+                    margin: EdgeInsets.only(top: 30, left: 20),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.pop(context);
@@ -41,10 +42,13 @@ class _DetailMobilKeluargaState extends State<DetailMobilKeluarga> {
                       ),
                     ),
                   ),
-                  Center(
-                    child: Image.asset(
-                      'assets/keluarga/brio.png',
-                      fit: BoxFit.cover,
+                  Container(
+                    margin: EdgeInsets.only(top: 70, left: 30, right: 30),
+                    child: Center(
+                      child: Image.asset(
+                        'assets/pickup/pickup.png',
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ],
@@ -186,7 +190,7 @@ class _DetailMobilKeluargaState extends State<DetailMobilKeluarga> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => DetailMobilKeluarga(),
+                              builder: (context) => (Pembayaran()),
                             ),
                           );
                         },

@@ -126,101 +126,175 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 SizedBox(height: 20),
-                Row(
+                Column(
                   children: [
-                    Padding(
-                      padding:
-                          const EdgeInsets.only(left: 30, right: 30, top: 100),
-                      child: Text(
-                        'Type Mobil',
-                        style: TextStyle(
-                          fontSize: 25,
+                    Container(
+                      margin: EdgeInsets.only(left: 30, right: 30, top: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: List.generate(
+                          2,
+                          (index) {
+                            Icon iconSpesifikasi;
+                            String judulSpesifikasi;
+                            String keteranganSpesifikasi;
+
+                            switch (index) {
+                              case 0:
+                                iconSpesifikasi = Icon(
+                                  Icons.airline_seat_recline_extra,
+                                  size: 40,
+                                  color: Colors.white,
+                                );
+                                judulSpesifikasi = 'Kapasitas';
+                                keteranganSpesifikasi = '4 Orang';
+                                break;
+                              case 1:
+                                iconSpesifikasi = Icon(
+                                  Icons.grid_goldenratio,
+                                  size: 40,
+                                  color: Colors.white,
+                                );
+                                judulSpesifikasi = 'Type';
+                                keteranganSpesifikasi = 'Manual';
+                                break;
+                              default:
+                                iconSpesifikasi = Icon(Icons.ac_unit);
+                                judulSpesifikasi = 'Kapasitas';
+                                keteranganSpesifikasi = '4 Orang';
+                            }
+
+                            return Container(
+                              height: 150,
+                              width: 150,
+                              decoration: BoxDecoration(
+                                color: Warna.fourthColor,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  iconSpesifikasi,
+                                  const SizedBox(height: 15),
+                                  Text(
+                                    judulSpesifikasi,
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w300,
+                                        fontSize: 17,
+                                        color: Colors.white),
+                                  ),
+                                  Text(
+                                    keteranganSpesifikasi,
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
                         ),
                       ),
                     ),
-                  ],
-                ),
-                Container(
-                    alignment: Alignment.topLeft,
-                    margin: EdgeInsets.only(
-                      left: _marginLeft,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                            children: List.generate(
-                              3,
-                              (index) {
-                                Color itemColor;
-                                // ignore: unused_local_variable
-                                String itemText;
-                                final images = [
-                                  'assets/keluarga/brio.png',
-                                  'assets/R.png',
-                                  'assets/pickup/box.png'
-                                ];
+                    Container(
+                      margin: EdgeInsets.only(left: 30, right: 30, top: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: List.generate(
+                          2,
+                          (index) {
+                            Icon iconSpesifikasi;
+                            String judulSpesifikasi;
+                            String keteranganSpesifikasi;
 
-                                switch (index) {
-                                  case 0:
-                                    itemColor = Warna.secondaryColor;
-                                    itemText = 'Mobil Keluarga';
-                                    break;
-                                  case 1:
-                                    itemColor = Warna.secondaryColor;
-                                    itemText = 'Mobil Sport';
-                                    break;
-                                  case 2:
-                                    itemColor = Warna.secondaryColor;
-                                    itemText = 'Mobil Pickup';
-                                    break;
-                                  default:
-                                    itemColor = Warna.primaryColor;
-                                    itemText = 'Mobil Keluarga';
-                                }
-
-                                return GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              DetailMobilKeluarga()),
-                                    );
-                                  },
-                                  child: Container(
-                                    margin: EdgeInsets.only(top: 20, right: 20),
-                                    height: 290,
-                                    width: 230,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(40)),
-                                        color: itemColor),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          margin: EdgeInsets.all(20),
-                                          child: Image.asset(
-                                            images[index],
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                            switch (index) {
+                              case 0:
+                                iconSpesifikasi = Icon(
+                                  Icons.airline_seat_recline_extra,
+                                  size: 40,
+                                  color: Colors.white,
                                 );
-                              },
-                            ).toList(),
+                                judulSpesifikasi = 'Kapasitas';
+                                keteranganSpesifikasi = '4 Orang';
+                                break;
+                              case 1:
+                                iconSpesifikasi = Icon(
+                                  Icons.grid_goldenratio,
+                                  size: 40,
+                                  color: Colors.white,
+                                );
+                                judulSpesifikasi = 'Type';
+                                keteranganSpesifikasi = 'Manual';
+                                break;
+                              case 2:
+                                iconSpesifikasi = Icon(
+                                  Icons.door_back_door,
+                                  size: 40,
+                                  color: Colors.white,
+                                );
+                                judulSpesifikasi = 'Kapasitas';
+                                keteranganSpesifikasi = '4 Orang';
+                                break;
+                              case 3:
+                                iconSpesifikasi = Icon(
+                                  Icons.ac_unit,
+                                  size: 40,
+                                  color: Colors.white,
+                                );
+                                judulSpesifikasi = 'Kapasitas';
+                                keteranganSpesifikasi = '4 Orang';
+                                break;
+                              default:
+                                iconSpesifikasi = Icon(Icons.ac_unit);
+                                judulSpesifikasi = 'Kapasitas';
+                                keteranganSpesifikasi = '4 Orang';
+                            }
+
+                            return Container(
+                              height: 150,
+                              width: 150,
+                              // margin: EdgeInsets.only(right: 15),
+                              decoration: BoxDecoration(
+                                color: Warna.fourthColor,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  iconSpesifikasi,
+                                  const SizedBox(height: 15),
+                                  Text(
+                                    judulSpesifikasi,
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w300,
+                                        fontSize: 17,
+                                        color: Colors.white),
+                                  ),
+                                  Text(
+                                    keteranganSpesifikasi,
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 30, right: 30, top: 40),
+                          child: Text(
+                            'Type Mobil',
+                            style: TextStyle(fontSize: 25, color: Colors.white),
                           ),
                         ),
                       ],
-                    )),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),

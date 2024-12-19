@@ -60,7 +60,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: _focusNode.hasFocus
-                              ? Colors.white
+                              ? Color(0xffEEEEEE)
                               : Colors.transparent,
                           border: Border.all(
                             color: _focusNode.hasFocus
@@ -71,7 +71,9 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                       child: TextField(
                         focusNode: _focusNode,
                         controller: _controller,
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(
+                          color: Color(0xffEEEEEE),
+                        ),
                         onChanged: (value) {
                           print('Teks pencarian: $value');
                         },
