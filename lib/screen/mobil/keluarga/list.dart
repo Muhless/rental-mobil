@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:rental_mobil/screen/mobil/keluarga/detail.dart';
+import 'package:rental_mobil/widgets/warna.dart';
 
 class MobilKeluarga extends StatefulWidget {
   const MobilKeluarga({super.key});
@@ -31,8 +32,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        // backgroundColor: Color(0xff222831),
-        backgroundColor: Color(0xffffffff),
+        backgroundColor: Warna.primaryColor,
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(20),
@@ -48,7 +48,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                       child: Icon(
                         Icons.arrow_back,
                         size: 30,
-                        color: Color(0xfff98c53),
+                        color: Colors.white,
                       ),
                     ),
                   ),
@@ -56,7 +56,6 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
               ),
               Row(
                 children: [
-                  // TextField untuk pencarian
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
@@ -82,7 +81,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                           suffixIcon: IconButton(
                             icon: Icon(
                               Icons.search,
-                              color: Color(0xfff98c53),
+                              color: Colors.grey,
                             ),
                             onPressed: () {
                               _search(_controller.text);
@@ -126,8 +125,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                       width: MediaQuery.of(context).size.width * 0.85,
                       height: MediaQuery.of(context).size.height * 0.25,
                       decoration: BoxDecoration(
-                        // color: Color(0xffEEEEEE),
-                        color: Color(0xfff98c53),
+                        color: Color(0xffEEEEEE),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Padding(

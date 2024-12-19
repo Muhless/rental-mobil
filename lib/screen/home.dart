@@ -22,22 +22,21 @@ class _HomeScreenState extends State<HomeScreen> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0xfff9f2ef),
+        backgroundColor: Warna.primaryColor,
         body: NotificationListener<ScrollNotification>(
           onNotification: (scrollNotification) {
             if (scrollNotification is ScrollUpdateNotification) {
-              // Cek apakah scroll bergerak ke kanan
               if (scrollNotification.metrics.pixels > 0) {
                 setState(() {
-                  _marginLeft = 0; // Hilangkan margin saat scroll ke kanan
+                  _marginLeft = 0;
                 });
               } else {
                 setState(() {
-                  _marginLeft = 30; // Kembalikan margin saat scroll kembali
+                  _marginLeft = 30;
                 });
               }
             }
-            return true; // Memberi tahu bahwa kita telah menangani notifikasi scroll
+            return true;
           },
           child: SingleChildScrollView(
             child: Column(
@@ -46,7 +45,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   width: double.infinity,
                   height: 140,
                   decoration: BoxDecoration(
-                    // color: Color(0xff2984FA),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(30),
                         bottomRight: Radius.circular(30)),
@@ -60,9 +58,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Text(
                             'Hello,',
                             style: TextStyle(
-                                // color: Colors.white,
                                 fontSize: 25,
-                                fontWeight: FontWeight.w300),
+                                fontWeight: FontWeight.w300,
+                                color: Colors.white),
                             textAlign: TextAlign.left,
                           ),
                         ),
@@ -71,12 +69,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             Text(
                               'Budiono Siregar',
-                              style: TextStyle(fontSize: 35),
+                              style:
+                                  TextStyle(fontSize: 35, color: Colors.white),
                             ),
                             Icon(
                               Icons.account_circle,
                               size: 40,
-                              // color: Colors.white,
+                              color: Colors.white,
                             )
                           ],
                         )
@@ -156,6 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               3,
                               (index) {
                                 Color itemColor;
+                                // ignore: unused_local_variable
                                 String itemText;
                                 final images = [
                                   'assets/keluarga/brio.png',
@@ -165,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                                 switch (index) {
                                   case 0:
-                                    itemColor = Warna.primaryColor;
+                                    itemColor = Warna.secondaryColor;
                                     itemText = 'Mobil Keluarga';
                                     break;
                                   case 1:
@@ -173,7 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     itemText = 'Mobil Sport';
                                     break;
                                   case 2:
-                                    itemColor = Warna.thirdColor;
+                                    itemColor = Warna.secondaryColor;
                                     itemText = 'Mobil Pickup';
                                     break;
                                   default:
