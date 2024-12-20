@@ -6,6 +6,7 @@ import 'package:rental_mobil/screen/login.dart';
 import 'package:rental_mobil/screen/mobil/keluarga/list.dart';
 import 'package:rental_mobil/screen/profile.dart';
 import 'package:rental_mobil/widgets/statusbar.dart';
+import 'package:rental_mobil/widgets/warna.dart';
 
 void main() {
   runApp(const MainApp());
@@ -31,12 +32,11 @@ class MainNavigation extends StatefulWidget {
 }
 
 class _MainNavigationState extends State<MainNavigation> {
-  int _currentIndex = 1;
+  int _currentIndex = 0;
 
-  // Daftar halaman yang dapat diakses
   final List<Widget> _pages = [
-    ProfileScreen(),
     HomeScreen(),
+    ProfileScreen(),
     Login(),
     MobilKeluarga()
   ];
@@ -44,22 +44,25 @@ class _MainNavigationState extends State<MainNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_currentIndex], // Menampilkan halaman sesuai indeks
+      body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Warna.primaryColor,
+        selectedItemColor: Warna.thirdColor,
+        unselectedItemColor: Warna.secondaryColor,
         currentIndex: _currentIndex,
         onTap: (index) {
           setState(() {
-            _currentIndex = index; // Mengubah halaman
+            _currentIndex = index;
           });
         },
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.login),

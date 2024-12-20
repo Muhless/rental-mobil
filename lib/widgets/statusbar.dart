@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 class SystemUIHelper {
   // Fungsi untuk membuat status bar transparan
-  static void setTransparentStatusBar({Brightness iconBrightness = Brightness.dark}) {
+  static void setTransparentStatusBar(
+      {Brightness iconBrightness = Brightness.dark}) {
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         statusBarColor: Colors.transparent, // Membuat status bar transparan
