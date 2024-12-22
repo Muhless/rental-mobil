@@ -46,7 +46,7 @@ class _MainNavigationState extends State<MainNavigation> {
     return Scaffold(
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Warna.primaryColor,
+        backgroundColor: Color(0xff293b51),
         selectedItemColor: Warna.thirdColor,
         unselectedItemColor: Warna.secondaryColor,
         currentIndex: _currentIndex,
@@ -58,15 +58,15 @@ class _MainNavigationState extends State<MainNavigation> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: 'Beranda',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
+            icon: Icon(Icons.car_rental),
+            label: 'Mobil',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.login),
-            label: 'Login',
+            icon: Icon(Icons.list_alt_outlined),
+            label: 'Rental',
           ),
         ],
       ),
