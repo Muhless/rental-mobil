@@ -21,7 +21,7 @@ class _DetailMobilKeluargaState extends State<DetailMobilKeluarga> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Warna.secondaryColor,
+        backgroundColor: Warna.fifthColor,
         body: Column(
           children: [
             Expanded(
@@ -30,7 +30,7 @@ class _DetailMobilKeluargaState extends State<DetailMobilKeluarga> {
                 children: [
                   Container(
                     alignment: Alignment.bottomLeft,
-                    margin: EdgeInsets.only(top: 30, left: 20),
+                    margin: EdgeInsets.only(top: 38, left: 20),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.pop(context);
@@ -38,7 +38,7 @@ class _DetailMobilKeluargaState extends State<DetailMobilKeluarga> {
                       child: Icon(
                         Icons.arrow_back,
                         size: 30,
-                        color: Colors.black,
+                        color: Warna.sixthColor,
                       ),
                     ),
                   ),
@@ -46,7 +46,7 @@ class _DetailMobilKeluargaState extends State<DetailMobilKeluarga> {
                     margin: EdgeInsets.only(top: 70, left: 30, right: 30),
                     child: Center(
                       child: Image.asset(
-                        'assets/pickup/pickup.png',
+                        'assets/keluarga/brio.png',
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -57,7 +57,7 @@ class _DetailMobilKeluargaState extends State<DetailMobilKeluarga> {
             Expanded(
               flex: 1,
               child: Container(
-                color: Warna.primaryColor,
+                color: Warna.sixthColor,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -148,8 +148,8 @@ class _DetailMobilKeluargaState extends State<DetailMobilKeluarga> {
                               }
 
                               return Container(
-                                height: 150,
-                                width: 150,
+                                height: 130,
+                                width: 130,
                                 margin: EdgeInsets.only(right: 15),
                                 decoration: BoxDecoration(
                                   color: Warna.fourthColor,

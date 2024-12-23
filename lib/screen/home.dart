@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: 80, left: 30, right: 30),
+                  margin: EdgeInsets.only(top: 65, left: 30, right: 30),
                   child: Column(
                     children: [
                       Align(
@@ -121,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               },
                               child: Container(
                                 height: 100,
-                                width: 307,
+                                width: 295,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
                                       image: AssetImage('assets/bg1.jpg'),
@@ -162,7 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           Icons.arrow_circle_right_outlined,
                                           color: Warna.primaryColor,
                                           size: 50,
-                                        )
+                                        ),
                                       ],
                                     )
                                   ],
@@ -174,7 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+                      margin: EdgeInsets.only(left: 20, right: 20, top: 30),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: List.generate(

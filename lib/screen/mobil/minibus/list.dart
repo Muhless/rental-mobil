@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:rental_mobil/screen/mobil/keluarga/detail.dart';
 import 'package:rental_mobil/widgets/warna.dart';
 
-class MobilPickup extends StatefulWidget {
-  const MobilPickup({super.key});
+class MobilListrik extends StatefulWidget {
+  const MobilListrik({super.key});
 
   @override
-  State<MobilPickup> createState() => _MobilKeluargaState();
+  State<MobilListrik> createState() => _MobilKeluargaState();
 }
 
-class _MobilKeluargaState extends State<MobilPickup> {
+class _MobilKeluargaState extends State<MobilListrik> {
   final FocusNode _focusNode = FocusNode();
   final TextEditingController _controller = TextEditingController();
   Color _textColor = Colors.white;

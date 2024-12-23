@@ -13,11 +13,22 @@ class MobilKeluarga extends StatefulWidget {
 
 class _MobilKeluargaState extends State<MobilKeluarga> {
   final FocusNode _focusNode = FocusNode();
-
   final TextEditingController _controller = TextEditingController();
+  Color _textColor = Colors.white;
 
   void _search(String query) {
     print("Mencari: $query");
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    _focusNode.addListener(() {
+      setState(() {
+        _textColor = _focusNode.hasFocus ? Colors.black : Colors.white;
+      });
+    });
   }
 
   @override
@@ -32,7 +43,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Warna.primaryColor,
+        backgroundColor: Warna.sixthColor,
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(20),
@@ -60,7 +71,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: _focusNode.hasFocus
-                              ? Color(0xffEEEEEE)
+                              ? Warna.fifthColor
                               : Colors.transparent,
                           border: Border.all(
                             color: _focusNode.hasFocus
@@ -72,7 +83,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                         focusNode: _focusNode,
                         controller: _controller,
                         style: TextStyle(
-                          color: Color(0xffEEEEEE),
+                          color: _textColor,
                         ),
                         onChanged: (value) {
                           print('Teks pencarian: $value');
@@ -83,7 +94,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                           suffixIcon: IconButton(
                             icon: Icon(
                               Icons.search,
-                              color: Colors.grey,
+                              color: Colors.white,
                             ),
                             onPressed: () {
                               _search(_controller.text);
@@ -105,7 +116,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                       print('Filter button ditekan');
                     },
                     icon: Icon(Icons.filter_list),
-                    color: Color(0xfff98c53),
+                    color: Colors.white,
                   ),
                 ],
               ),
@@ -182,7 +193,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                                   const EdgeInsets.symmetric(horizontal: 3),
                               child: Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Container(
                                     padding: EdgeInsets.symmetric(
@@ -229,11 +240,11 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                                     ),
                                   ),
                                   SizedBox(
-                                    width: 10,
+                                    width: 3,
                                   ),
                                   Container(
                                     padding: EdgeInsets.symmetric(
-                                        horizontal: 15, vertical: 5),
+                                        horizontal: 13, vertical: 5),
                                     decoration: BoxDecoration(
                                         color: Color.fromARGB(255, 0, 0, 0),
                                         borderRadius:
