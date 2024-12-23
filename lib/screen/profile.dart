@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:rental_mobil/widgets/warna.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+class Profile extends StatelessWidget {
+  const Profile({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Profile Screen'),
-      ),
-      body: const Center(
-        child: Text(
-          'Ini adalah Halaman Profile',
-          style: TextStyle(fontSize: 20),
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Container(
+            alignment: Alignment.bottomLeft,
+            margin: EdgeInsets.only(top: 38, left: 20),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Icon(
+                Icons.arrow_back,
+                size: 30,
+                color: Warna.sixthColor,
+              ),
+            ),
+          ),
         ),
       ),
     );

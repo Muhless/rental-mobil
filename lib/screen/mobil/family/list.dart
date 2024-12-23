@@ -1,17 +1,17 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:rental_mobil/screen/mobil/keluarga/detail.dart';
+import 'package:rental_mobil/screen/mobil/family/detail.dart';
 import 'package:rental_mobil/widgets/warna.dart';
 
-class MobilKeluarga extends StatefulWidget {
-  const MobilKeluarga({super.key});
+class ListFamily extends StatefulWidget {
+  const ListFamily({super.key});
 
   @override
-  State<MobilKeluarga> createState() => _MobilKeluargaState();
+  State<ListFamily> createState() => _MobilKeluargaState();
 }
 
-class _MobilKeluargaState extends State<MobilKeluarga> {
+class _MobilKeluargaState extends State<ListFamily> {
   final FocusNode _focusNode = FocusNode();
   final TextEditingController _controller = TextEditingController();
   Color _textColor = Colors.white;
@@ -130,8 +130,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => DetailMobilKeluarga()),
+                        MaterialPageRoute(builder: (context) => DetailFamily()),
                       );
                     },
                     child: Container(
@@ -181,7 +180,7 @@ class _MobilKeluargaState extends State<MobilKeluarga> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(8),
                                     child: Image.asset(
-                                      'assets/R.png',
+                                      'assets/family/brio.png',
                                       height: 130,
                                     ),
                                   ),

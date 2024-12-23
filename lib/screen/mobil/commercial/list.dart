@@ -1,17 +1,17 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:rental_mobil/screen/mobil/keluarga/detail.dart';
+import 'package:rental_mobil/screen/mobil/commercial/detail.dart';
 import 'package:rental_mobil/widgets/warna.dart';
 
-class MobilPickup extends StatefulWidget {
-  const MobilPickup({super.key});
+class ListCommercial extends StatefulWidget {
+  const ListCommercial({super.key});
 
   @override
-  State<MobilPickup> createState() => _MobilKeluargaState();
+  State<ListCommercial> createState() => _MobilKeluargaState();
 }
 
-class _MobilKeluargaState extends State<MobilPickup> {
+class _MobilKeluargaState extends State<ListCommercial> {
   final FocusNode _focusNode = FocusNode();
   final TextEditingController _controller = TextEditingController();
   Color _textColor = Colors.white;
@@ -131,7 +131,7 @@ class _MobilKeluargaState extends State<MobilPickup> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DetailMobilKeluarga()),
+                            builder: (context) => DetailCommercial()),
                       );
                     },
                     child: Container(
@@ -181,7 +181,7 @@ class _MobilKeluargaState extends State<MobilPickup> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(8),
                                     child: Image.asset(
-                                      'assets/R.png',
+                                      'assets/commercial/pickup.png',
                                       height: 130,
                                     ),
                                   ),

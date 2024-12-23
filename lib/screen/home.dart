@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:rental_mobil/screen/mobil/keluarga/detail.dart';
-import 'package:rental_mobil/screen/mobil/keluarga/list.dart';
+import 'package:rental_mobil/screen/mobil/family/list.dart';
+import 'package:rental_mobil/screen/mobil/kriteria.dart';
+import 'package:rental_mobil/screen/profile.dart';
 import 'package:rental_mobil/widgets/statusbar.dart';
 import 'package:rental_mobil/widgets/warna.dart';
 
@@ -70,11 +71,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: 20),
                 Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+                      margin: EdgeInsets.only(left: 20, right: 20),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: List.generate(
@@ -93,80 +94,83 @@ class _HomeScreenState extends State<HomeScreen> {
                                 judulSpesifikasi = 'Kapasitas';
                                 tagline = 'cihuy';
                             }
-
-                            return GestureDetector(
-                              onTap: () {
-                                switch (index) {
-                                  case 0:
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              MobilKeluarga()),
-                                    );
-                                    break;
-                                  case 1:
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              DetailMobilKeluarga()),
-                                    );
-                                    break;
-                                  default:
-                                    Navigator.pop(
-                                      context,
-                                    );
-                                }
-                              },
-                              child: Container(
-                                height: 100,
-                                width: 295,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage('assets/bg1.jpg'),
-                                      fit: BoxFit.cover),
-                                  color: Warna.primaryColor,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Text(
+                            return Container(
+                              height: 200,
+                              width: 295,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage('assets/bg1.jpg'),
+                                    fit: BoxFit.cover),
+                                color: Warna.primaryColor,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.only(top: 70),
+                                        child: Text(
                                           judulSpesifikasi,
                                           style: TextStyle(
                                               fontSize: 20,
                                               fontWeight: FontWeight.bold,
                                               color: Warna.primaryColor),
                                         ),
-                                        Text(
-                                          tagline,
-                                          style: TextStyle(
-                                              fontSize: 17,
-                                              color: Warna.primaryColor),
-                                        ),
-                                      ],
+                                      ),
+                                      Text(
+                                        tagline,
+                                        style: TextStyle(
+                                            fontSize: 17,
+                                            color: Warna.primaryColor),
+                                      ),
+                                    ],
+                                  ),
+                                  Spacer(),
+                                  Container(
+                                    margin: EdgeInsets.only(bottom: 20),
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                (KriteriaMobil()),
+                                          ),
+                                        );
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          fixedSize: Size(200, 30),
+                                          backgroundColor: Warna.fourthColor),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            "Rental Sekarang",
+                                            style: TextStyle(
+                                                fontSize: 15,
+                                                color: Colors.white),
+                                          ),
+                                          SizedBox(width: 10),
+                                          Icon(
+                                            Icons.arrow_circle_right_outlined,
+                                            color: Colors.white,
+                                            size: 25,
+                                          )
+                                        ],
+                                      ),
                                     ),
-                                    Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Icon(
-                                          Icons.arrow_circle_right_outlined,
-                                          color: Warna.primaryColor,
-                                          size: 50,
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             );
                           },
@@ -174,7 +178,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 20, right: 20, top: 30),
+                      margin: EdgeInsets.only(left: 20, right: 20, top: 20),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: List.generate(
@@ -212,8 +216,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              MobilKeluarga()),
+                                          builder: (context) => ListFamily()),
                                     );
                                     break;
                                   case 1:
@@ -221,7 +224,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              DetailMobilKeluarga()),
+                                              KriteriaMobil()),
                                     );
                                     break;
                                   default:
@@ -258,7 +261,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+                      margin: EdgeInsets.only(left: 20, right: 20, top: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: List.generate(
@@ -296,16 +299,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              MobilKeluarga()),
+                                          builder: (context) => ListFamily()),
                                     );
                                     break;
                                   case 1:
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              DetailMobilKeluarga()),
+                                          builder: (context) => Profile()),
                                     );
                                     break;
                                   default:

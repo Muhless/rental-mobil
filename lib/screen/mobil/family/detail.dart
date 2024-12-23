@@ -5,19 +5,20 @@ import 'package:flutter/services.dart';
 import 'package:rental_mobil/screen/pembayaran.dart';
 import 'package:rental_mobil/widgets/warna.dart';
 
-class DetailMobilKeluarga extends StatefulWidget {
-  const DetailMobilKeluarga({super.key});
+class DetailFamily extends StatefulWidget {
+  const DetailFamily({super.key});
 
   @override
-  State<DetailMobilKeluarga> createState() => _DetailMobilKeluargaState();
+  State<DetailFamily> createState() => _DetailFamily();
 }
 
-class _DetailMobilKeluargaState extends State<DetailMobilKeluarga> {
+class _DetailFamily extends State<DetailFamily> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.dark));
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -46,7 +47,7 @@ class _DetailMobilKeluargaState extends State<DetailMobilKeluarga> {
                     margin: EdgeInsets.only(top: 70, left: 30, right: 30),
                     child: Center(
                       child: Image.asset(
-                        'assets/keluarga/brio.png',
+                        'assets/family/brio.png',
                         fit: BoxFit.cover,
                       ),
                     ),

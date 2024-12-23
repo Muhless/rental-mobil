@@ -1,17 +1,17 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:rental_mobil/screen/mobil/keluarga/detail.dart';
+import 'package:rental_mobil/screen/mobil/luxury/detail.dart';
 import 'package:rental_mobil/widgets/warna.dart';
 
-class MobilListrik extends StatefulWidget {
-  const MobilListrik({super.key});
+class ListLuxury extends StatefulWidget {
+  const ListLuxury({super.key});
 
   @override
-  State<MobilListrik> createState() => _MobilKeluargaState();
+  State<ListLuxury> createState() => _MobilKeluargaState();
 }
 
-class _MobilKeluargaState extends State<MobilListrik> {
+class _MobilKeluargaState extends State<ListLuxury> {
   final FocusNode _focusNode = FocusNode();
   final TextEditingController _controller = TextEditingController();
   Color _textColor = Colors.white;
@@ -131,7 +131,8 @@ class _MobilKeluargaState extends State<MobilListrik> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DetailMobilKeluarga()),
+                            builder: (context) => DetailLuxury
+                            ()),
                       );
                     },
                     child: Container(
@@ -181,7 +182,7 @@ class _MobilKeluargaState extends State<MobilListrik> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(8),
                                     child: Image.asset(
-                                      'assets/R.png',
+                                      'assets/luxury/audi.png',
                                       height: 130,
                                     ),
                                   ),
