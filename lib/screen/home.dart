@@ -18,318 +18,324 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     SystemUIHelper.setTransparentStatusBar(iconBrightness: Brightness.light);
-    return Container(
-      height: double.infinity,
-      decoration: BoxDecoration(
-        color: Warna.primaryColor,
-        image: DecorationImage(
-          image: AssetImage("assets/bg.jpg"),
-          fit: BoxFit.cover,
-        ),
-      ),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: 65, left: 30, right: 30),
-              child: Column(
-                children: [
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      'Halo,',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w300,
-                          color: Colors.white),
-                      textAlign: TextAlign.left,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Budiono Siregar',
-                        style: TextStyle(fontSize: 30, color: Colors.white),
-                      ),
-                      IconButton(
-                        icon: Icon(
-                          Icons.logout,
-                          size: 20,
-                          color: Colors.white,
-                        ),
-                        onPressed: () {
-                          // Proses logout
-                          // _logout(context);
-                        },
-                      )
-                    ],
-                  )
-                ],
-              ),
+    return MaterialApp(
+      home: Scaffold(
+        body: Container(
+          height: double.infinity,
+          decoration: BoxDecoration(
+            color: Warna.primaryColor,
+            image: DecorationImage(
+              image: AssetImage("assets/bg.jpg"),
+              fit: BoxFit.cover,
             ),
-            SizedBox(height: 20),
-            Column(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(left: 20, right: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: List.generate(
-                      1,
-                      (index) {
-                        String judulSpesifikasi;
-                        String tagline;
-
-                        switch (index) {
-                          case 0:
-                            judulSpesifikasi = 'Pilihan Terbaik ';
-                            tagline = 'untuk Setiap Perjalanan';
-                            break;
-
-                          default:
-                            judulSpesifikasi = 'Kapasitas';
-                            tagline = 'cihuy';
-                        }
-                        return Container(
-                          height: 200,
-                          width: 295,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage('assets/bg1.jpg'),
-                                fit: BoxFit.cover),
-                            color: Warna.primaryColor,
-                            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 65, left: 30, right: 30),
+                child: Column(
+                  children: [
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        'Halo,',
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w300,
+                            color: Colors.white),
+                        textAlign: TextAlign.left,
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Budiono Siregar',
+                          style: TextStyle(fontSize: 30, color: Colors.white),
+                        ),
+                        IconButton(
+                          icon: Icon(
+                            Icons.logout,
+                            size: 20,
+                            color: Colors.white,
                           ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.only(top: 70),
-                                    child: Text(
-                                      judulSpesifikasi,
+                          onPressed: () {
+                            // Proses logout
+                            // _logout(context);
+                          },
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 20),
+              Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(left: 20, right: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: List.generate(
+                        1,
+                        (index) {
+                          String judulSpesifikasi;
+                          String tagline;
+
+                          switch (index) {
+                            case 0:
+                              judulSpesifikasi = 'Pilihan Terbaik ';
+                              tagline = 'untuk Setiap Perjalanan';
+                              break;
+
+                            default:
+                              judulSpesifikasi = 'Kapasitas';
+                              tagline = 'cihuy';
+                          }
+                          return Container(
+                            height: 200,
+                            width: 295,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage('assets/bg1.jpg'),
+                                  fit: BoxFit.cover),
+                              color: Warna.primaryColor,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.only(top: 70),
+                                      child: Text(
+                                        judulSpesifikasi,
+                                        style: TextStyle(
+                                            fontSize: 30,
+                                            fontWeight: FontWeight.bold,
+                                            color: Warna.primaryColor),
+                                      ),
+                                    ),
+                                    Text(
+                                      tagline,
                                       style: TextStyle(
-                                          fontSize: 30,
-                                          fontWeight: FontWeight.bold,
+                                          fontSize: 17,
                                           color: Warna.primaryColor),
                                     ),
+                                  ],
+                                ),
+                                // Spacer(),
+                                Container(
+                                  margin: EdgeInsets.only(bottom: 20),
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              (KriteriaMobil()),
+                                        ),
+                                      );
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        fixedSize: Size(200, 30),
+                                        backgroundColor: Warna.fourthColor),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          "Rental Sekarang",
+                                          style: TextStyle(
+                                              fontSize: 15,
+                                              color: Colors.white),
+                                        ),
+                                      ],
+                                    ),
                                   ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 20, right: 20, top: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: List.generate(
+                        2,
+                        (index) {
+                          Icon iconSpesifikasi;
+                          String judulSpesifikasi;
+
+                          switch (index) {
+                            case 0:
+                              iconSpesifikasi = Icon(
+                                Icons.list_alt,
+                                size: 40,
+                                color: Colors.white,
+                              );
+                              judulSpesifikasi = 'Rental';
+                              break;
+                            case 1:
+                              iconSpesifikasi = Icon(
+                                Icons.car_crash,
+                                size: 40,
+                                color: Colors.white,
+                              );
+                              judulSpesifikasi = 'Daftar Mobil';
+                              break;
+                            default:
+                              iconSpesifikasi = Icon(Icons.ac_unit);
+                              judulSpesifikasi = 'Kapasitas';
+                          }
+
+                          return GestureDetector(
+                            onTap: () {
+                              switch (index) {
+                                case 0:
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => KriteriaMobil()),
+                                  );
+                                  break;
+                                case 1:
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => KriteriaMobil()),
+                                  );
+                                  break;
+                                default:
+                                  Navigator.pop(
+                                    context,
+                                  );
+                              }
+                            },
+                            child: Container(
+                              height: 130,
+                              width: 130,
+                              decoration: BoxDecoration(
+                                color: Warna.fourthColor,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  iconSpesifikasi,
+                                  const SizedBox(height: 15),
                                   Text(
-                                    tagline,
+                                    judulSpesifikasi,
                                     style: TextStyle(
+                                        fontWeight: FontWeight.w300,
                                         fontSize: 17,
-                                        color: Warna.primaryColor),
+                                        color: Colors.white),
                                   ),
                                 ],
                               ),
-                              Spacer(),
-                              Container(
-                                margin: EdgeInsets.only(bottom: 20),
-                                child: ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => (KriteriaMobil()),
-                                      ),
-                                    );
-                                  },
-                                  style: ElevatedButton.styleFrom(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      fixedSize: Size(200, 30),
-                                      backgroundColor: Warna.fourthColor),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        "Rental Sekarang",
-                                        style: TextStyle(
-                                            fontSize: 15, color: Colors.white),
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 20, right: 20, top: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: List.generate(
+                        2,
+                        (index) {
+                          Icon iconSpesifikasi;
+                          String judulSpesifikasi;
+
+                          switch (index) {
+                            case 0:
+                              iconSpesifikasi = Icon(
+                                Icons.history,
+                                size: 40,
+                                color: Colors.white,
+                              );
+                              judulSpesifikasi = 'Riwayat';
+                              break;
+                            case 1:
+                              iconSpesifikasi = Icon(
+                                Icons.help_center,
+                                size: 40,
+                                color: Colors.white,
+                              );
+                              judulSpesifikasi = 'Bantuan';
+                              break;
+                            default:
+                              iconSpesifikasi = Icon(Icons.ac_unit);
+                              judulSpesifikasi = 'Home';
+                          }
+
+                          return GestureDetector(
+                            onTap: () {
+                              switch (index) {
+                                case 0:
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Login()),
+                                  );
+                                  break;
+                                case 1:
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Register()),
+                                  );
+                                  break;
+                                default:
+                                  Navigator.pop(
+                                    context,
+                                  );
+                              }
+                            },
+                            child: Container(
+                              height: 130,
+                              width: 130,
+                              decoration: BoxDecoration(
+                                color: Warna.fourthColor,
+                                borderRadius: BorderRadius.circular(10),
                               ),
-                            ],
-                          ),
-                        );
-                      },
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  iconSpesifikasi,
+                                  const SizedBox(height: 15),
+                                  Text(
+                                    judulSpesifikasi,
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w300,
+                                        fontSize: 17,
+                                        color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: 20, right: 20, top: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: List.generate(
-                      2,
-                      (index) {
-                        Icon iconSpesifikasi;
-                        String judulSpesifikasi;
-
-                        switch (index) {
-                          case 0:
-                            iconSpesifikasi = Icon(
-                              Icons.list_alt,
-                              size: 40,
-                              color: Colors.white,
-                            );
-                            judulSpesifikasi = 'Rental';
-                            break;
-                          case 1:
-                            iconSpesifikasi = Icon(
-                              Icons.car_crash,
-                              size: 40,
-                              color: Colors.white,
-                            );
-                            judulSpesifikasi = 'Daftar Mobil';
-                            break;
-                          default:
-                            iconSpesifikasi = Icon(Icons.ac_unit);
-                            judulSpesifikasi = 'Kapasitas';
-                        }
-
-                        return GestureDetector(
-                          onTap: () {
-                            switch (index) {
-                              case 0:
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => KriteriaMobil()),
-                                );
-                                break;
-                              case 1:
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => KriteriaMobil()),
-                                );
-                                break;
-                              default:
-                                Navigator.pop(
-                                  context,
-                                );
-                            }
-                          },
-                          child: Container(
-                            height: 130,
-                            width: 130,
-                            decoration: BoxDecoration(
-                              color: Warna.fourthColor,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                iconSpesifikasi,
-                                const SizedBox(height: 15),
-                                Text(
-                                  judulSpesifikasi,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w300,
-                                      fontSize: 17,
-                                      color: Colors.white),
-                                ),
-                              ],
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: 20, right: 20, top: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: List.generate(
-                      2,
-                      (index) {
-                        Icon iconSpesifikasi;
-                        String judulSpesifikasi;
-
-                        switch (index) {
-                          case 0:
-                            iconSpesifikasi = Icon(
-                              Icons.history,
-                              size: 40,
-                              color: Colors.white,
-                            );
-                            judulSpesifikasi = 'Riwayat';
-                            break;
-                          case 1:
-                            iconSpesifikasi = Icon(
-                              Icons.help_center,
-                              size: 40,
-                              color: Colors.white,
-                            );
-                            judulSpesifikasi = 'Bantuan';
-                            break;
-                          default:
-                            iconSpesifikasi = Icon(Icons.ac_unit);
-                            judulSpesifikasi = 'Home';
-                        }
-
-                        return GestureDetector(
-                          onTap: () {
-                            switch (index) {
-                              case 0:
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Login()),
-                                );
-                                break;
-                              case 1:
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Register()),
-                                );
-                                break;
-                              default:
-                                Navigator.pop(
-                                  context,
-                                );
-                            }
-                          },
-                          child: Container(
-                            height: 130,
-                            width: 130,
-                            decoration: BoxDecoration(
-                              color: Warna.fourthColor,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                iconSpesifikasi,
-                                const SizedBox(height: 15),
-                                Text(
-                                  judulSpesifikasi,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w300,
-                                      fontSize: 17,
-                                      color: Colors.white),
-                                ),
-                              ],
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

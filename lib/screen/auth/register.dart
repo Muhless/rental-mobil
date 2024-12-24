@@ -3,7 +3,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:rental_mobil/screen/auth/login.dart';
-import 'package:rental_mobil/screen/home.dart';
 import 'package:rental_mobil/widgets/warna.dart';
 
 class Register extends StatefulWidget {
@@ -114,7 +113,7 @@ class _RegisterState extends State<Register> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const HomeScreen()),
+                                    builder: (context) => const Login()),
                               );
                             },
                             style: ElevatedButton.styleFrom(

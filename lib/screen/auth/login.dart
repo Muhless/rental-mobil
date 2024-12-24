@@ -3,18 +3,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:rental_mobil/screen/auth/register.dart';
-import 'package:rental_mobil/screen/mobil/family/list.dart';
+import 'package:rental_mobil/screen/home.dart';
 import 'package:rental_mobil/widgets/warna.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
-
   @override
-  State<Login> createState() => _LoginState();
+  _LoginState createState() => _LoginState();
 }
 
 class _LoginState extends State<Login> {
+  TextEditingController _usernamecontroller = TextEditingController();
+  TextEditingController _passwordcontroller = TextEditingController();
+  final _formkey = GlobalKey<FormState>();
   bool _obscurePassword = true;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _usernamecontroller.dispose();
+    _passwordcontroller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +44,7 @@ class _LoginState extends State<Login> {
               Expanded(
                 child: SingleChildScrollView(
                   child: Container(
+                    key: _formkey,
                     margin: EdgeInsets.only(top: 150),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -44,14 +60,21 @@ class _LoginState extends State<Login> {
                         ),
                         SizedBox(height: 8),
                         Text(
-                          'Silahkan login terlebih dahulu untuk melanjutkan',
+                          'Login untuk melanjutkan',
                           style: TextStyle(
                             color: Colors.white70,
                             fontSize: 16,
                           ),
                         ),
                         SizedBox(height: 32),
-                        TextField(
+                        TextFormField(
+                          controller: _usernamecontroller,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Username tidak boleh kosong';
+                            }
+                            return null;
+                          },
                           decoration: InputDecoration(
                             labelText: 'Username',
                             labelStyle: TextStyle(color: Colors.white70),
@@ -65,8 +88,15 @@ class _LoginState extends State<Login> {
                           style: TextStyle(color: Colors.white),
                         ),
                         SizedBox(height: 16),
-                        TextField(
+                        TextFormField(
                           obscureText: _obscurePassword,
+                          controller: _passwordcontroller,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Password tidak boleh kosong';
+                            }
+                            return null;
+                          },
                           decoration: InputDecoration(
                             labelText: 'Password',
                             labelStyle: TextStyle(color: Colors.white70),
@@ -97,11 +127,9 @@ class _LoginState extends State<Login> {
                           width: double.infinity,
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => ListFamily()),
-                              );
+                              if (_formkey.currentState?.validate() ?? false) {
+                                print(_usernamecontroller.text);
+                              }
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.blue,
