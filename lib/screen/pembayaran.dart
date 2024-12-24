@@ -1,75 +1,67 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:rental_mobil/widgets/warna.dart';
 
-class Pembayaran extends StatelessWidget {
-  final List<String> imageList = [
-    'assets/family/honda.png',
-    'assets/family/brio.png',
-    'assets/R.png',
-  ];
-
-  Pembayaran({super.key});
+class Pembayaran extends StatefulWidget {
+  const Pembayaran({super.key});
 
   @override
+  State<Pembayaran> createState() => _PembayaranState();
+}
+
+class _PembayaranState extends State<Pembayaran> {
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Column(
-            children: [
-              Container(
-                alignment: Alignment.bottomLeft,
-                margin: EdgeInsets.only(top: 38, left: 20),
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Icon(
-                    Icons.arrow_back,
-                    size: 30,
-                    color: Warna.sixthColor,
-                  ),
-                ),
+    return Container(
+      color: Colors.white,
+      child: Column(
+        children: [
+          Container(
+            alignment: Alignment.bottomLeft,
+            margin: EdgeInsets.only(top: 38, left: 20),
+            child: GestureDetector(
+              onTap: () {
+                _showExitConfirmationDialog(context);
+              },
+              child: Icon(
+                Icons.arrow_back,
+                size: 30,
+                color: Warna.sixthColor,
               ),
-              CarouselSlider(
-                options: CarouselOptions(
-                  height: 200.0, // Tinggi carousel
-                  autoPlay: true, // Putar otomatis
-                  enlargeCenterPage: true, // Memperbesar gambar di tengah
-                  aspectRatio: 16 / 9, // Rasio aspek gambar
-                  autoPlayInterval: Duration(seconds: 3), // Interval autoplay
-                  viewportFraction:
-                      0.8, // Fraksi viewport untuk melihat sebagian item di kiri/kanan
-                ),
-                items: imageList.map((imagePath) {
-                  return Builder(
-                    builder: (BuildContext context) {
-                      return Container(
-                        width: MediaQuery.of(context).size.width,
-                        margin: EdgeInsets.symmetric(horizontal: 8.0),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
-                            image: AssetImage(imagePath),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      );
-                    },
-                  );
-                }).toList(),
-              ),
-            ],
-          ),
-        ),
+            ),
+          )
+        ],
       ),
     );
   }
-}
 
-void main() {
-  runApp(MaterialApp(
-    home: Pembayaran(),
-  ));
+  void _showExitConfirmationDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Konfirmasi"),
+          content: Text(
+            "Yakin ingin membatalkan perentalan?",
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text("Tidak"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                Navigator.pop(context);
+              },
+              child: Text("Ya"),
+            ),
+          ],
+        );
+      },
+    );
+  }
 }

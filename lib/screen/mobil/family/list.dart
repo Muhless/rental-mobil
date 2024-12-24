@@ -122,7 +122,6 @@ class _MobilKeluargaState extends State<ListFamily> {
               ),
 
               SizedBox(height: 20),
-              // list mobil 1
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
